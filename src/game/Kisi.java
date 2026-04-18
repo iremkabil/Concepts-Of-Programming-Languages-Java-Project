@@ -1,14 +1,17 @@
-package game;
 /**
- * @author [Ad Soyad] ve [email]
- * @since 2026-04-14
+ * @author İrem Kabil ve irem.kabil@ogr.sakarya.edu.tr
+ * @since 2026-03-28
  * <p>
- * Kisi sinifi: Oyundaki her bir bireyi temsil eder.
- * Her kisinin benzersiz bir ID'si, ismi, soyismi ve yasi vardir.
+ * Kisi sinifi: Simulasyondaki her bir bireyi temsil eder.
+ * Her kisinin oyun genelinde benzersiz bir ID numarasi,
+ * Faker ile uretilmis isim-soyisim bilgisi ve yasi bulunur.
  * </p>
  */
+
+package game;
+
 public class Kisi {
-    private static int sayac = 0; // unique ID üretmek için sayaç
+    private static int sayac = 0; // unique ID uretmek icin sayac
 
     private int id;
     private String isim;
@@ -16,7 +19,7 @@ public class Kisi {
     private int yas;
 
     public Kisi(String isim, String soyisim, int yas) {
-        this.id = ++sayac; // her yeni kişi benzersiz ID alır
+        this.id = ++sayac; // her yeni kisi benzersiz ID alir
         this.isim = isim;
         this.soyisim = soyisim;
         this.yas = yas;

@@ -1,16 +1,18 @@
+/**
+ * @author İrem Kabil ve irem.kabil@ogr.sakarya.edu.tr
+ * @since 2026-03-28
+ * <p>
+ * Mahalle sinifi: Bir mahalleyi ve icerisinde yasayan kisileri yonetir.
+ * Nufus artisi sirasinda yeni kisi nesneleri olusturulur ve
+ * her tur sonunda tum kisilerin yaslari bir artirilir.
+ * </p>
+ */
+
 package game;
 import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * @author [Ad Soyad] ve [email]
- * @since 2026-04-14
- * <p>
- * Mahalle sinifi: Bir mahalleyi temsil eder.
- * Mahallede yasayan kisileri tutar ve nufus artisini yonetir.
- * </p>
- */
 public class Mahalle {
     private String ad;
     private ArrayList<Kisi> kisiler;
@@ -20,20 +22,20 @@ public class Mahalle {
         this.kisiler = new ArrayList<>();
     }
 
-    // Başlangıçta belirli sayıda kişi ekler
+    // Baslangicta belirli sayida kisi ekler
     public void baslangicKisileriniOlustur(int kisiSayisi, Faker faker, Random random) {
         for (int i = 0; i < kisiSayisi; i++) {
             String isim = faker.name().firstName();
             String soyisim = faker.name().lastName();
-            int yas = random.nextInt(51); // 0-50 arası
+            int yas = random.nextInt(51); // 0-50 arasi
             kisiler.add(new Kisi(isim, soyisim, yas));
         }
     }
 
-    // Tur sonunda nüfus artışı: mevcut kişi sayısı x çarpan
+    // Tur sonunda nufus artisi: mevcut kisi sayisi x carpan
     public void nufusArtir(int carpan, Faker faker, Random random) {
         if (carpan == 0) {
-            // Çarpan 0 ise sadece 1 kişi ekle
+            // Carpan 0 ise sadece 1 kisi ekle
             String isim = faker.name().firstName();
             String soyisim = faker.name().lastName();
             int yas = random.nextInt(51);
@@ -50,7 +52,7 @@ public class Mahalle {
         }
     }
 
-    // Her tur sonunda tüm kişilerin yaşını 1 artır
+    // Her tur sonunda tum kisilerin yasini 1 arttir
     public void yaslariArtir() {
         for (Kisi kisi : kisiler) {
             kisi.yasArtir();

@@ -1,17 +1,19 @@
+/**
+ * @author İrem Kabil ve irem.kabil@ogr.sakarya.edu.tr
+ * @since 2026-03-29
+ * <p>
+ * Sehir sinifi: Bir sehri temsil eder. Ilceleri bunyesinde barindirir.
+ * Nufus artis carpanini hesaplar, bolunme kosullarini kontrol eder
+ * ve gerektiginde sehri ikiye bolerek yeni bir sehir olusturur.
+ * </p>
+ */
+
 package game;
 
 import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * @author [Ad Soyad] ve [email]
- * @since 2026-04-14
- * <p>
- * Sehir sinifi: Bir sehri temsil eder.
- * Ilceleri yonetir, nufus artisini ve sehir bolunmesini destekler.
- * </p>
- */
 public class Sehir {
     private String ad;
     private ArrayList<Ilce> ilceler;
@@ -25,7 +27,7 @@ public class Sehir {
         ilceler.add(ilce);
     }
 
-    // Nüfus artış çarpanını hesapla: nüfusun birler + onlar basamağı
+    // Nufus artis carpanini hesapla: nufusun birler + onlar basamagi
     public int getCarpan() {
         int nufus = getNufus();
         int birler = nufus % 10;
@@ -33,7 +35,7 @@ public class Sehir {
         return birler + onlar;
     }
 
-    // Tur sonunda nüfus artışı
+    // Tur sonunda nufus artisi
     public void nufusArtir(Faker faker, Random random) {
         int carpan = getCarpan();
         for (Ilce ilce : ilceler) {
@@ -41,26 +43,26 @@ public class Sehir {
         }
     }
 
-    // Her tur sonunda yaşları artır
+    // Her tur sonunda yaslari artir
     public void yaslariArtir() {
         for (Ilce ilce : ilceler) {
             ilce.yaslariArtir();
         }
     }
 
-    // Şehrin nüfusu 4 basamaklı mı (>= 1000)?
+    // Sehrin nufusu 4 basamakli mi (>= 1000)?
     public boolean bolunmeliMi() {
         return getNufus() >= 1000 && ilceler.size() > 1;
     }
     
-    // Şehri böl: ilçelerin yarısını yeni şehre taşı
+    // Sehri bol: ilcelerin yarisini yeni sehre tasi
     public Sehir bolun(Faker faker) {
         Sehir yeniSehir = new Sehir(faker.address().city());
 
         int toplamIlce = ilceler.size();
-        int tasinacak = toplamIlce / 2; // tek sayıysa yeni şehirde 1 eksik
+        int tasinacak = toplamIlce / 2; // tek sayiysa yeni sehirde 1 eksik
 
-        // Listenin sonundan taşı
+        // Listenin sonundan tasi
         for (int i = 0; i < tasinacak; i++) {
             Ilce tasinanIlce = ilceler.remove(ilceler.size() - 1);
             yeniSehir.ilceEkle(tasinanIlce);
@@ -85,7 +87,7 @@ public class Sehir {
         return ilceler;
     }
 
-    // Detaylı yazdırma (oyun sonu için)
+    // Detayli yazdirma (oyun sonu icin)
     public void detayliYazdir() {
         String ayrac = "========================================";
         String altAyrac = "----------------------------------------";

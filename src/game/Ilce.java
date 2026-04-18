@@ -1,18 +1,18 @@
+/**
+ * @author İrem Kabil ve irem.kabil@ogr.sakarya.edu.tr
+ * @since 2026-03-28
+ * <p>
+ * Ilce sinifi: Bir ilceyi ve ona bagli mahalleleri yonetir.
+ * Ilce nufusu, bagli mahallelerdeki toplam kisi sayisindan hesaplanir.
+ * </p>
+ */
+
 
 package game;
-
 import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * @author [Ad Soyad] ve [email]
- * @since 2026-04-14
- * <p>
- * Ilce sinifi: Bir ilceyi temsil eder.
- * Ilceye bagli mahalleleri tutar ve yonetir.
- * </p>
- */
 public class Ilce {
     private String ad;
     private ArrayList<Mahalle> mahalleler;
@@ -26,14 +26,14 @@ public class Ilce {
         mahalleler.add(mahalle);
     }
 
-    // Tur sonunda tüm mahallelerde nüfus artışı
+    // Tur sonunda tum mahallelerde nufus artisi
     public void nufusArtir(int carpan, Faker faker, Random random) {
         for (Mahalle mahalle : mahalleler) {
             mahalle.nufusArtir(carpan, faker, random);
         }
     }
 
-    // Her tur sonunda tüm kişilerin yaşını artır
+    // Her tur sonunda tum kisilerin yasini attir
     public void yaslariArtir() {
         for (Mahalle mahalle : mahalleler) {
             mahalle.yaslariArtir();
