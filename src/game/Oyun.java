@@ -52,10 +52,10 @@ public class Oyun {
 
     // Hos geldin mesaji
     private void hosGeldinMesaji() {
-        System.out.println("╔════════════════════════════════════════════╗");
-        System.out.println("║     SEHIR NUFUS SIMULASYONU               ║");
-        System.out.println("║     Programlama Dillerinin Prensipleri     ║");
-        System.out.println("╚════════════════════════════════════════════╝");
+        System.out.println("+--------------------------------------------+");
+        System.out.println("|     SEHIR NUFUS SIMULASYONU                |");
+        System.out.println("|     Programlama Dillerinin Prensipleri      |");
+        System.out.println("+--------------------------------------------+");
         System.out.println();
     }
 
@@ -179,15 +179,12 @@ public class Oyun {
 
     // Tur bilgisi goster
     private void turBilgisiGoster(int tur) {
-        System.out.println("╔════════════════════════════════════════════╗");
-        String turInfo = "  Tur " + tur + "/" + turSayisi + " tamamlandi";
-        String sehirInfo = "  Toplam sehir: " + sehirler.size();
-        System.out.println("║" + turInfo + tekrarla(" ", 44 - turInfo.length()) + "║");
-        System.out.println("║" + sehirInfo + tekrarla(" ", 44 - sehirInfo.length()) + "║");
-        System.out.println("╚════════════════════════════════════════════╝");
+        System.out.println("============================================");
+        System.out.println("  Tur " + tur + "/" + turSayisi + " tamamlandi");
+        System.out.println("  Toplam sehir: " + sehirler.size());
+        System.out.println("============================================");
         System.out.println();
     }
-
     // Nufus gosterimi (satirlari ve sutunlari numarali)
     private void nufuslariGoster() {
         // Sutun basliklarini yazdir
@@ -242,9 +239,9 @@ public class Oyun {
 
     // Oyun sonu
     private void oyunSonu() {
-        System.out.println("╔════════════════════════════════════════════╗");
-        System.out.println("║            OYUN SONA ERDI                 ║");
-        System.out.println("╚════════════════════════════════════════════╝");
+        System.out.println("============================================");
+        System.out.println("            OYUN SONA ERDI                  ");
+        System.out.println("============================================");
         System.out.println();
 
         // Toplam nufus hesapla
